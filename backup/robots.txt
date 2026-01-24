@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://ikarosites.com/sitemap.xml
