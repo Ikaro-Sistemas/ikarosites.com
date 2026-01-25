@@ -59,6 +59,24 @@ Para manter o rastreamento automático das tarefas e atualizar o quadro Kanban v
 *   **Adicionar comentário:** `PROJ-123 #comment Ajuste de CSS finalizado`
 *   **Mover para Concluído:** `PROJ-123 #done #comment Tarefa finalizada e testada`
 
+## 🐳 Configuração com Docker
+
+Para rodar o projeto localmente de forma isolada e rápida, utilizamos Docker.
+
+1.  **Configuração Inicial:** Siga o guia detalhado em `INSTRUCOES_DOCKER.md`.
+2.  **Iniciar Ambiente:** Execute `docker-compose up -d`.
+3.  **Acessar:** O site estará disponível em `http://localhost:8000`.
+
+## 🧪 Testes
+
+Atualmente, os testes são manuais. Após iniciar o ambiente Docker ou subir alterações:
+
+1.  **Verificação Visual:** Acesse a Home, páginas internas e admin (`/wp-admin`).
+2.  **Verificação de Erros:**
+    *   No Docker: `docker-compose logs -f wordpress`
+    *   No PHP: Verifique o `error_log` na raiz (se habilitado).
+3.  **Performance:** Utilize o *Lighthouse* do Chrome DevTools para garantir que as novas alterações não impactaram negativamente a pontuação.
+
 ## 💻 Guia Rápido de Comandos Git
 
 Para versionar o projeto e enviar atualizações para o GitHub, utilize os seguintes comandos no terminal:

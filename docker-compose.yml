@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: ikaror83_wp381
+      MYSQL_USER: ikaror83_wp381
+      MYSQL_PASSWORD: "Lyp442.-5S"
+      MYSQL_ROOT_PASSWORD: "root_password_secure"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  wordpress:
+    build: .
+    restart: always
+    ports:
+      - "8000:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ikaror83_wp381
+      WORDPRESS_DB_PASSWORD: "Lyp442.-5S"
+      WORDPRESS_DB_NAME: ikaror83_wp381
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+
+volumes:
+  db_data:
