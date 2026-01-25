@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* --- Configurações Globais --- */
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* Fundo claro para contraste com o tema azul */
+  background: #f5f8fa; 
+}
+
+/* --- Paleta de Cores e Utilitários --- */
+:root {
+  --azul-escuro1: #0a2342;
+  --azul-escuro2: #185b8c;
+  --azul-escuro3: #4f8fc0;
+  --azul-escuro4: #a7c7e7;
+}
+
+.gradient-bg { background: linear-gradient(90deg, #0a2342 0%, #185b8c 50%, #4f8fc0 80%, #a7c7e7 100%); }
+.bg-azul-escuro { background-color: #0a2342; }
+.bg-azul-medio { background-color: #185b8c; }
+.bg-azul-claro { background-color: #4f8fc0; }
+.bg-azul-pastel { background-color: #a7c7e7; }
+.text-azul-escuro { color: #0a2342; }
+.text-azul-medio { color: #185b8c; }
+.text-azul-claro { color: #4f8fc0; }
+.text-azul-pastel { color: #a7c7e7; }
+.border-azul-escuro { border-color: #0a2342; }
+.border-azul-medio { border-color: #185b8c; }
+.border-azul-claro { border-color: #4f8fc0; }
+.border-azul-pastel { border-color: #a7c7e7; }
+.hover\:bg-azul-medio:hover { background-color: #185b8c; }
+.hover\:bg-azul-claro:hover { background-color: #4f8fc0; }
+.hover\:bg-azul-pastel:hover { background-color: #a7c7e7; }
+
+/* Botões com Gradiente */
+.btn-destaque-1 { background: linear-gradient(90deg, #ec4899 0%, #6366f1 100%); color: #fff; }
+.btn-destaque-2 { background: linear-gradient(90deg, #6366f1 0%, #0ea5e9 100%); color: #fff; }
+.btn-destaque-3 { background: linear-gradient(90deg, #f472b6 0%, #4f8fc0 100%); color: #fff; }
+.btn-destaque-4 { background: linear-gradient(90deg, #a7c7e7 0%, #ec4899 100%); color: #fff; }
+.btn-destaque-5 { background: linear-gradient(90deg, #0ea5e9 0%, #f472b6 100%); color: #fff; }
+.btn-destaque-6 { background: linear-gradient(90deg, #6366f1 0%, #a7c7e7 100%); color: #fff; }
+
+/* Scroll horizontal utilitários */
+.scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.scroll-hide::-webkit-scrollbar { display: none; }
+.scroll-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* --- Menu Circular --- */
+.submenu-circular-180 {
+  width: 260px;
+  height: 260px;
+  left: 32px;
+  top: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+  display: block;
+  position: absolute;
+  z-index: 9999;
+}
+.submenu-circular-180.active {
+  pointer-events: auto;
+  opacity: 1;
+}
+.submenu-circular-inner {
+  position: relative;
+  width: 260px;
+  height: 260px;
+}
+.submenu-circular-180 .submenu-btn {
+  min-width: 56px;
+  max-width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--azul-escuro1), var(--azul-escuro2), var(--azul-escuro3));
+  color: #fff;
+  border: 3px solid var(--azul-escuro4);
+  box-shadow: 0 6px 32px 0 var(--azul-escuro1), 0 1.5px 0 0 var(--azul-escuro2) inset;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(var(--angle)) translate(120px, 0) rotate(calc(-1 * var(--angle)));
+  transition: box-shadow 0.2s, transform 0.2s;
+  z-index: 60;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.98;
+  padding: 0;
+}
+.submenu-circular-180 .submenu-btn:hover {
+  box-shadow: 0 8px 40px 0 var(--azul-escuro2), 0 2px 0 0 var(--azul-escuro3) inset;
+  background: linear-gradient(90deg, var(--azul-escuro2), var(--azul-escuro3), var(--azul-escuro4));
+  border-color: var(--azul-escuro1);
+  transform: scale(1.08) rotate(var(--angle)) translate(120px, 0) rotate(calc(-1 * var(--angle)));
+}
+.submenu-circular-180 .submenu-btn img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* --- Ícone Menu Animado --- */
+.menu-icon-lines {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+.menu-icon-lines span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--azul-escuro2), var(--azul-escuro3));
+  border-radius: 2px;
+  opacity: 1;
+  left: 0;
+  transition: all 0.3s;
+}
+.menu-icon-lines span:nth-child(1) { top: 6px; }
+.menu-icon-lines span:nth-child(2) { top: 14px; }
+.menu-icon-lines span:nth-child(3) { top: 22px; }
+
+#menu-icone:hover .menu-icon-lines span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#menu-icone:hover .menu-icon-lines span:nth-child(2) {
+  opacity: 0;
+}
+#menu-icone:hover .menu-icon-lines span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- Animações --- */
+@keyframes pulseTitle {
+  0% { box-shadow: 0 0 32px #185b8c99, 0 0 0 #4f8fc0; }
+  100% { box-shadow: 0 0 48px #4f8fc0cc, 0 0 24px #185b8c88; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* --- Estilos Personalizados da Home (Refatorado de Inline) --- */
+.header-custom {
+  display: flex; 
+  align-items: center; 
+  gap: 18px; 
+  background: linear-gradient(90deg, #0a2342 60%, #185b8c 100%);
+  color: #fff; 
+  padding: 26px 32px; 
+  border-bottom-left-radius: 32px; 
+  border-bottom-right-radius: 32px; 
+  box-shadow: 0 8px 32px 0 #0a234288, 0 1.5px 0 0 #185b8c inset;
+  position: relative;
+  border: 2.5px solid #4f8fc0;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #185b8c 60%, #4f8fc0 100%);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #185b8c44;
+}
+
+.menu-trigger {
+  background: linear-gradient(135deg, #0a2342 70%, #185b8c 100%);
+  border: 2.5px solid #4f8fc0;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px #185b8c33;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+/* --- Banner LGPD (Cookies) --- */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(10, 35, 66, 0.95);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transform: translateY(150%);
+  transition: transform 0.5s ease-out;
+}
+
+.cookie-banner.show {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .cookie-banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}

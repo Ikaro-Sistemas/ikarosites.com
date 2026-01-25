@@ -1,39 +1,23 @@
-# Arquivos de Sistema Operacional
+# WordPress Core & Config
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/
+xmlrpc.php
+
+# Uploads (Opcional: remova o # abaixo se não quiser versionar imagens pesadas)
+# wp-content/uploads/
+
+# Environment & Logs
+.env
+*.log
+debug.log
+
+# IDE & System
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
-
-# WordPress - Arquivos de Configuração com Senhas (SEGURANÇA)
-wp-config.php
-
-# WordPress - Conteúdo que geralmente não se versiona (opcional)
-# Se você quiser fazer backup de tudo, pode remover a linha abaixo.
-# Mas para "Clean Code", geralmente versionamos apenas temas e plugins customizados.
-wp-content/uploads/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/backups/
-
-# Arquivos Grandes e Backups (Bloqueia erro do GitHub)
-arquivos antes das API/
-*.tar
-*.zip
-*.gz
-*.rar
-*.sql
-*.bak
-
-# Logs e Debug
-debug.log
-error_log
-php_error.log
-
-# Arquivos do cPanel/Hospedagem
-.ftpquota
-error_log
-
-# Node.js (caso use ferramentas de build no futuro)
 node_modules/
-npm-debug.log
-
-# Arquivos temporários de editores
-.vscode/
+# Ignorar backups pesados
+arquivos antes das API/

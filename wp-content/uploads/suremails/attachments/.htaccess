@@ -1,0 +1,24 @@
+
+# BEGIN SureMails
+# As diretrizes (linhas) entre "BEGIN SureMails" e "END SureMails" são
+# geradas dinamicamente e só devem ser modificadas através de filtros do WordPress.
+# Quaisquer alterações nas diretivas entre esses marcadores serão sobrescritas.
+<Files *>
+  SetHandler none
+  SetHandler default-handler
+  RemoveHandler .cgi .php .php3 .php4 .php5 .php7 .phtml .phar .phps .pht .phpt .inc .pl .py .pyc .pyo
+  RemoveType .cgi .php .php3 .php4 .php5 .php7 .phtml .phar .phps .pht .phpt .inc .pl .py .pyc .pyo
+</Files>
+<IfModule mod_php5.c>
+  php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+  php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+  php_flag engine off
+</IfModule>
+<IfModule headers_module>
+  Header set X-Robots-Tag "noindex"
+</IfModule>
+# END SureMails
