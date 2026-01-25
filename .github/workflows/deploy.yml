@@ -24,6 +24,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           # Evita erros de certificado SSL comuns em hospedagem compartilhada (HostGator)
           security: loose
+          port: 21
+          timeout: 300000
           # Se sua conta FTP já abre na pasta do site, use "./". Se for a conta principal, use "./public_html/"
           server-dir: ./
           exclude: |
