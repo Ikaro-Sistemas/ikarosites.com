@@ -33,6 +33,16 @@ jobs:
             **/.git*/**
             **/.github/**
             README.md
+            INSTRUCOES_DOCKER.md
             license.txt
             .gitignore
+            .dockerignore
+            docker-compose.yml
+            Dockerfile
             **/*.log
+            wp-config.php
+            wp-content/uploads/
+            arquivos antes das API/
+            backup/
+            _backup_antigo/
+            .htaccess
