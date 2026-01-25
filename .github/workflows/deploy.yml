@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ./
           security: loose
-          protocol: ftp
+          protocol: ftps
           port: 21
           timeout: 600000
           # Configurado para action@ikarosites.com no servidor br1160
