@@ -71,22 +71,6 @@ Para rodar o projeto localmente de forma isolada e rápida, utilizamos Docker.
 
 Atualmente, os testes são manuais. Após iniciar o ambiente Docker ou subir alterações:
 
-1.  **Verificação Visual:** Acesse a Home, páginas internas e admin (`/wp-admin`).
-2.  **Verificação de Erros:**
-    *   No Docker: `docker-compose logs -f wordpress`
-    *   No PHP: Verifique o `error_log` na raiz (se habilitado).
-3.  **Performance:** Utilize o *Lighthouse* do Chrome DevTools para garantir que as novas alterações não impactaram negativamente a pontuação.
-
-## 💻 Guia Rápido de Comandos Git
-
-Para versionar o projeto e enviar atualizações para o GitHub, utilize os seguintes comandos no terminal:
-
-1.  **Verificar alterações:** `git status`
-2.  **Adicionar arquivos:** `git add .`
-3.  **Salvar versão (Commit):** `git commit -m "Mensagem do commit"`
-4.  **Enviar para o GitHub:** `git push`
-
----
 
 ## 📝 Próximos Passos
 
@@ -94,6 +78,9 @@ Para versionar o projeto e enviar atualizações para o GitHub, utilize os segui
 - [ ] Implementar otimização de imagens (WebP).
 - [ ] Configurar cache de servidor e CDN.
 - [x] Criar um tema filho (Child Theme) para customizações de código seguras.
+- [ ] Novo dominio
+- [ ] woocomerce
+- [ ] maps
 
 ---
 
